@@ -18,7 +18,8 @@ $ git clone https://github.com/motty93/gce-firewalls.git
 
 $ cd gce-firewalls/
 
+# After the gcloud config set project <project name>.
 $ ./gce-firewall.sh
 ```
 
-You will reject IP addresses for 
+You will reject IP addresses of cn, kr, kp.
