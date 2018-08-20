@@ -5,7 +5,7 @@ So I created a shell script, please use it by all means.
 
 ## How to use
 
-It is a premise that gcloud commands can be use.
+It is a premise that gcloud commands can be used.
 
 If you won't know, please access here.
 
