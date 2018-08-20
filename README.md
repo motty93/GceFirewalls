@@ -1,4 +1,4 @@
-# Specific IP address reject
+# Specific IP addresses reject
 This repository is the way to reject IP addresses using gcloud commands.
 
 So I created a shell script, please use it by all means.
