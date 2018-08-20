@@ -3,8 +3,6 @@ This repository is the way to reject IP addresses using gcloud commands.
 
 So I created a shell script, please use it by all means.
 
-Thank you.
-
 ## How to use
 
 It is a premise that gcloud commands can be use.
@@ -19,7 +17,17 @@ $ git clone https://github.com/motty93/gce-firewalls.git
 $ cd gce-firewalls/
 
 # After the gcloud config set project <project name>.
-$ ./gce-firewall.sh
+$ chmod 755 cn-kr-kp-firewall.sh
+
+$ ./cn-kr-kp-firewall.sh
 ```
 
 You will reject IP addresses of cn, kr, kp.
+
+If you are going to want to reject Philippines IP addresses, you can reject the next way.
+
+```
+$ chmod 755 philippines-firewall.sh
+
+$ ./philippines-firewall.sh
+```

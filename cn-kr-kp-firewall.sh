@@ -1,4 +1,5 @@
 #!/bin/sh
+# Korea, China, North Korea reject.
 
 gcloud compute firewall-rules create china-block-01 \
   --priority 10 \
