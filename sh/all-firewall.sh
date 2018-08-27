@@ -16,12 +16,21 @@ do
       ADDRESSES=""
     fi
     sed -i -e 1,255d $DIR_NAME/iptext/all-ip-addresses.txt
-    gcloud compute firewall-rules create ip-reject-0$count \
-            --priority 10 \
-            --action deny \
-            --direction ingress \
-            --rules all \
-            --source-ranges $ADDRESSES
+    if [ $count -lt 10 ]; then
+      gcloud compute firewall-rules create ip-reject-0$count \
+              --priority 10 \
+              --action deny \
+              --direction ingress \
+              --rules all \
+              --source-ranges $ADDRESSES
+    else
+      gcloud compute firewall-rules create ip-reject-$count \
+              --priority 10 \
+              --action deny \
+              --direction ingress \
+              --rules all \
+              --source-ranges $ADDRESSES
+    fi
   fi
 done < $DIR_NAME/iptext/all-ip-addresses.txt
 
