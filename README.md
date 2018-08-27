@@ -15,8 +15,11 @@ https://cloud.google.com/sdk/docs/how-to?hl=en
 $ git clone https://github.com/motty93/GceFirewalls.git
 
 $ cd GceFirewalls/sh/
+```
 
-# After the gcloud config set project <project name>.
+After the project selected by `gcloud config set project <project name>`.
+
+```
 $ chmod 755 cn-kr-kp-firewall.sh
 
 $ ./cn-kr-kp-firewall.sh
