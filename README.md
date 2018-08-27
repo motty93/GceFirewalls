@@ -12,9 +12,9 @@ If you won't know, please access here.
 https://cloud.google.com/sdk/docs/how-to?hl=en
 
 ```
-$ git clone https://github.com/motty93/gce-firewalls.git
+$ git clone https://github.com/motty93/GceFirewalls.git
 
-$ cd gce-firewalls/sh/
+$ cd GceFirewalls/sh/
 
 # After the gcloud config set project <project name>.
 $ chmod 755 cn-kr-kp-firewall.sh
