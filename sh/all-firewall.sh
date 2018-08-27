@@ -1,21 +1,21 @@
 #!/bin/bash
 
 count=0
-BASE_DIRECTORY=$(cd $(dirname $0); pwd)
-DIR_NAME=$(dirname ${BASE_DIRECTORY})
+BASE_PATH=$(cd $(dirname $0); pwd)
+DIR_PARH=$(dirname ${BASE_PATH})
 
 while read line
 do
-  if [ -s $DIR_NAME/iptext/all-ip-addresses.txt ]; then
+  if [ -s $DIR_PATH/iptext/all-ip-addresses.txt ]; then
     count=$(( count + 1 ))
     if [ "$(uname)" == 'Linux' ]; then
-      ADDRESSES=`head -n 255 $DIR_NAME/iptext/all-ip-addresses.txt | sed -e ':loop; N; $!b loop; s/[\r\n]\+/,/g'`
+      ADDRESSES=`head -n 255 $DIR_PATH/iptext/all-ip-addresses.txt | sed -e ':loop; N; $!b loop; s/[\r\n]\+/,/g'`
     elif [ "$(uname)" == 'Darwin' ]; then
-      ADDRESSES=`head -n 255 $DIR_NAME/iptext/all-ip-addresses.txt | sed "" -e ':loop; N; $!b loop; s/[\r\n]\+/,/g'`
+      ADDRESSES=`head -n 255 $DIR_PATH/iptext/all-ip-addresses.txt | sed "" -e ':loop; N; $!b loop; s/[\r\n]\+/,/g'`
     else
       ADDRESSES=""
     fi
-    sed -i -e 1,255d $DIR_NAME/iptext/all-ip-addresses.txt
+    sed -i -e 1,255d $DIR_PATH/iptext/all-ip-addresses.txt
     if [ $count -lt 10 ]; then
       gcloud compute firewall-rules create ip-reject-0$count \
               --priority 10 \
@@ -32,7 +32,7 @@ do
               --source-ranges $ADDRESSES
     fi
   fi
-done < $DIR_NAME/iptext/all-ip-addresses.txt
+done < $DIR_PATH/iptext/all-ip-addresses.txt
 
-cd $DIR_NAME
+cd $DIR_PATH
 git checkout iptext/all-ip-addresses.txt
