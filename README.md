@@ -14,7 +14,7 @@ https://cloud.google.com/sdk/docs/how-to?hl=en
 ```
 $ git clone https://github.com/motty93/gce-firewalls.git
 
-$ cd gce-firewalls/
+$ cd gce-firewalls/sh/
 
 # After the gcloud config set project <project name>.
 $ chmod 755 cn-kr-kp-firewall.sh
@@ -30,4 +30,12 @@ If you are going to want to reject Philippines IP addresses, you can reject the 
 $ chmod 755 philippines-firewall.sh
 
 $ ./philippines-firewall.sh
+```
+
+If you are going to want to reject all IP addresse, you need to add IP addresses which you want to reject to `iptext/all-ip-addresses.txt`.
+
+```
+$ chmod 755 all-firewall.sh
+
+$ ./all-firewall.sh
 ```
