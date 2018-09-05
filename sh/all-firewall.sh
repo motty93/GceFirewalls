@@ -5,7 +5,7 @@ BASE_PATH=$(cd $(dirname $0); pwd)
 DIR_PATH=$(dirname ${BASE_PATH})
 IP_TEXT_PATH=$DIR_PATH/iptext/all-ip-addresses.txt
 
-function GcloudFirewall() {
+function PostGcloudFirewall() {
   gcloud compute firewall-rules create ip-reject-$1 \
     --priority 10 \
     --action deny \
@@ -29,9 +29,9 @@ do
     sed -i -e 1,255d $IP_TEXT_PATH
 
     if [ $count -lt 10 ]; then
-      GcloudFirewall 0$count $ADDRESSES
+      PostGcloudFirewall 0$count $ADDRESSES
     else
-      GcloudFirewall $count $ADDRESSES
+      PostGcloudFirewall $count $ADDRESSES
     fi
   fi
 done < $IP_TEXT_PATH
