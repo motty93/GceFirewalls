@@ -17,9 +17,9 @@ $ cd ~
 $ git clone https://github.com/motty93/GceFirewalls.git
 ```
 
-After the project selected by `gcloud config set project <project name>`.
+After your project selected by `gcloud config set project <project name>`.
 
-This shell script is how to reject cn, kr, kp.
+This script is how to reject cn, kr, kp.
 
 ```
 $ cd GceFirewalls/sh/byCountry/
